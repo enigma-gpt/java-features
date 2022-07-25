@@ -12,6 +12,10 @@ repositories {
 
 test {
     useJUnitPlatform()
+
+    minHeapSize = "1280m" // initial heap size
+    maxHeapSize = "2056m" // maximum heap size
+    jvmArgs '-XX:MaxPermSize=256m' // mem argument for the test JVM
 }
 
 configurations {
