@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+    id 'io.spring.dependency-management' version '1.0.12.RELEASE'
+}
+
+group 'com.enigmagpt.features.concurrency'
+version '1.0.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+test {
+    useJUnitPlatform()
+}
+
+configurations {
+    all {
+        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+    }
+}
+
+dependencies {
+    testImplementation 'org.projectlombok:lombok:1.18.24'
+    testAnnotationProcessor "org.projectlombok:lombok:1.18.24"
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+    testImplementation 'org.awaitility:awaitility:4.2.0'
+    testImplementation 'org.springframework.boot:spring-boot-starter:2.7.2'
+    testImplementation 'org.springframework.boot:spring-boot-starter-log4j2:2.7.2'
+}
